@@ -1,0 +1,104 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "sourceType": "module",
+    "createDefaultProgram": true
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:cypress/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "overrides": [
+    {
+      "files": ["_app.tsx", "*.stories.tsx", "*.test.tsx"],
+      "rules": {
+        "react/jsx-props-no-spreading": 0
+      }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": 0
+      }
+    },
+    {
+      "files": ["*.js"],
+      "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["cypress.config.ts"],
+      "rules": {
+          "no-param-reassign": "off"
+      }
+    }
+  ],
+  "rules": {
+    "prettier/prettier": 2,
+    "react/jsx-props-no-spreading": 1,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "import/no-unresolved": "error",
+    "import/order":[
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups":[{
+          "pattern": "react",
+          "group": "external",
+          "position": "before"
+        }],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive":true
+        }
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.test.{js,jsx,ts,tsx}",
+        "**/*.spec.{js,jsx,ts,tsx}",
+        "**/*.stories.{js,jsx,ts,tsx}",
+        "test/**/*",
+        "cypress/**/*",
+        "plopfile.mjs",
+        "cypress.config.ts"
+      ]
+    }],
+    "react/function-component-definition": ["error", {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function"
+    }]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": false
+      }
+    }
+  }
+}

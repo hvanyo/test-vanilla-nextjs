@@ -1,0 +1,91 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "node", "jest"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "strictBindCallApply": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@public": [
+        "public"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@styles": [
+        "src/styles"
+      ],
+      "@i18n": [
+        "./i18n"
+      ],
+      "@test/*": [
+        "test/*"
+      ],
+      "@test": [
+        "test"
+      ],
+      "@customTypes/*": [
+        "src/types/*"
+      ],
+      "@customTypes": [
+        "src/types"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@config": [
+        "src/config"
+      ],
+      "@util/*": [
+        "src/util/*"
+      ],
+      "@util": [
+        "src/util"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@layouts": [
+        "src/layouts"
+      ]
+    },
+    "incremental": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/types/**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.config.*"
+  ],
+  "exclude": [
+    "node_modules",
+    "cypress"
+  ]
+}
